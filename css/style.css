@@ -5,7 +5,7 @@
 
 body {font-family: "Work Sans", sans-serif;}
 
-.container {width: 1120px;margin: 0 auto; border: 1px solid #000;}
+.container {width: 1120px;margin: 0 auto;}
 
 .btn_view {font-size: 15px; background: #c64932; color: #fff; padding: 9px 21px; display: inline-block;}
 .btn_view.bk {background: #000;}
@@ -56,13 +56,27 @@ header .more:hover::after {transform: rotate(135deg); height: 30px;}
 
 
 .section2 {display: flex;}
-.section2 .left {width: 50%; background: url(../images/section2.png); padding: 113px 0;}
+.section2 .left {width: 50%; background: url(../images/section2.png); padding: 113px 0; display: flex; justify-content: end; background-size: cover;}
+.section2 .left ul {display: flex; flex-direction: column; gap: 96px;}
+.section2 .left ul li {position: relative;}
+.section2 .left ul li::before {content: ""; position: absolute; width: 17px;height: 1px; background: #fff;left: 0; top: 18px;}
+
+
 .section2 .left .textbox {width: 560px; color: #fff;}
+.section2 .left .textbox strong {font-size: 24px; padding-left: 34px;}
+.section2 .left .textbox p {font-size: 14px; margin-top: 19px; padding-left: 34px;}
 
-.section2 .right {width: 50%; background: url(../images/section3.png);}
+.section2 .right {width: 50%; background: url(../images/section3.png); background-size: cover;}
 
 
-.section3 {}
+.section3 {padding: 113px 0;}
+.section3 h2 {font-size: 40px;margin-bottom: 37px; text-align: center;}
+.section3 ul {display: flex; justify-content: space-between; }
+.section3 ul li {text-align: center;}
+.section3 ul li a {}
+.section3 ul li a figure {}
+.section3 ul li a figure img {}
+.section3 ul li a .ex {font-size: 16px;}
+.section3 ul li a p {font-size: 18px;}
 
-
-footer {}
+footer {background: #071215; padding: 90px 0; display: flex; justify-content: center; align-items: center;}
