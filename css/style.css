@@ -5,7 +5,8 @@
 
 body {font-family: "Work Sans", sans-serif;}
 
-.container {width: 1120px;margin: 0 auto;}
+.container {max-width: 1120px;margin: 0 auto;}
+            /* 최대 1120px 까지만 커져라 */
 
 .btn_view {font-size: 15px; background: #c64932; color: #fff; padding: 9px 21px; display: inline-block;}
 .btn_view.bk {background: #000;}
@@ -16,9 +17,9 @@ position: absolute; z-index: 10; width: 100%;}  /* z-index: 5; <-- 포지션을 
 header h1 {width: 350px;  display: flex;justify-content: center;align-items: center;}
 
 header nav {width: 1000px;}
-header nav .gnb { display: flex;}
+header nav .gnb { display: flex; }
 header nav .gnb li { font-size: 18px; position: relative;}
-header nav .gnb li a { padding: 28px 40px; display: block;}
+header nav .gnb li a { padding: 28px 2vw; display: block;}
 
 header nav .gnb li .lnb {background: rgba(0,0,0,0.7); position: absolute; width: 100%; height: 0; 
 overflow: hidden; transition: 0.4s; backdrop-filter: blur(5px);}
@@ -31,16 +32,24 @@ header nav .gnb:hover li:hover {background: #c64932}
 header nav .gnb:hover li:hover a  {color: #fff;}
 
 
-header .more {width: 150px; display: flex; justify-content: center; align-items: center;}
+header .more {width: 150px; display: flex; justify-content: center; align-items: center; position: relative; z-index: 2;}
+
+
 header .more::before {content: ''; width: 4px;height: 18px; background: #000; position: absolute;}
 header .more::after {content: ''; width: 4px;height: 18px; background: #000; position: absolute; transform: rotate(90deg);}
 
-header .more:hover::before {transform: rotate(45deg); height: 30px;}
-header .more:hover::after {transform: rotate(135deg); height: 30px;}
+
+header .more.on::before {transform: rotate(45deg); height: 30px; background: #fff;}
+header .more.on::after {transform: rotate(135deg); height: 30px; background: #fff;}
+
+
+.brand {position: fixed; width: 100%; height: 100vh; background: rgba(0, 0, 0, 0.8); left: 0;top: 0; display: none;}
+.brand p {font-size: 100px; display: flex; justify-content: center; align-items: center; color: #fff; height: 100%;}
+
 
 
 .hero {}
-.hero .textbox {position: absolute; background: rgba(27,3,0,0.7); z-index: 9; left: 50%; width: 600px; padding: 60px 70px; box-sizing: border-box; margin-left: 140px; top: 50%; margin-top: -195px;}
+.hero .textbox {position: absolute; background: rgba(27,3,0,0.7); z-index: 9; left: 50%; width: 600px; padding: 60px 70px; box-sizing: border-box; margin-left: 140px; top: 50%; margin-top: -195px; display: none;}
 .hero .textbox .title {font-size: 55px; color: #fff; letter-spacing: -2px; margin-bottom: 24px;}
 .hero .textbox p {font-size: 18px; color: #fff; margin-bottom: 36px; line-height: 2;}
 
@@ -80,3 +89,17 @@ header .more:hover::after {transform: rotate(135deg); height: 30px;}
 .section3 ul li a p {font-size: 18px;}
 
 footer {background: #071215; padding: 90px 0; display: flex; justify-content: center; align-items: center;}
+
+
+
+@media screen and (max-width:830px) {
+    header {flex-wrap: wrap;}
+    header h1 {width: 100%;}
+    header .gnb {justify-content: center; background: rgba(198,73,50,0.8);}
+    header .gnb a {color: #fff;}
+    header .more {position: absolute; height: 30px; right: 20px; top: 10px; width: 50px;}
+
+    .hero {height: 100vh;}
+    .hero .swiper {height: 100%;}
+}
+

@@ -5,8 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>레이아웃2 - 김예진</title>
     <link rel="stylesheet" href="css/style.css">
+
+     <!-- Link AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
 
 
 </head>
@@ -54,6 +65,10 @@
         </nav>
         
         <a href="#" class="more"></a>
+
+        <div class="brand">
+            <P>PORSCHE</P>
+        </div>
     </header>
     
 
@@ -79,7 +94,8 @@
     
     
     <div class="section_box">
-        <section class="section1">
+        <section class="section1" data-aos="flip-left" data-aos-duration="3000" data-aos-delay="50"
+        data-aos-mirror="true" data-aos-once="false" data-aos-easing="ease-in-out">
             <div class="container">
                 <figure>
                     <img src="images/section1.png" alt="">
@@ -93,7 +109,8 @@
             </div>
         </section>
         
-        <section class="section2">
+        <section class="section2" data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="50"
+        data-aos-mirror="true" data-aos-once="false" data-aos-easing="ease-in-out">
             <div class="left">
                 <div class="textbox">
                     <ul>
@@ -117,7 +134,8 @@
             </div>
         </section>
         
-        <section class="section3">
+        <section class="section3" data-aos="fade-up"
+     data-aos-duration="3000" data-aos-mirror="true" data-aos-once="false" data-aos-easing="ease-in-out" data-aos-delay="50">
            <div class="container">
                 <h2>Discover</h2>
     
@@ -152,6 +170,25 @@
     <footer>
         <h1><img src="images/footerlogo.png" alt=""></h1>
     </footer>
+
+
+
+    <script src="script/jquery-3.7.1.min.js"></script>
+
+    <script>
+        /*  $(누구를).뭐뭐할때(실행(){
+                $(누구를).보여라()
+            }) */
+
+            $('header .more').click(function(){
+                $('header .more').toggleClass('on')/*('header .more')에 .클래스만들기('on') */
+                $('.brand').fadeToggle/* 보여라 */()
+            })
+            
+         
+
+
+    </script>
       
     
     <!-- Swiper JS -->
@@ -166,5 +203,15 @@
         },
         });
     </script>
+
+
+    <!-- Aos JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        AOS.init();
+    </script>
+
+
 </body>
 </html>
