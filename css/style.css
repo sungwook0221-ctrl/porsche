@@ -110,7 +110,7 @@ footer {background: #071215; padding: 90px 0; display: flex; justify-content: ce
     header {flex-wrap: wrap;}
     header h1 {width: 100%;}
     header .gnb {justify-content: center; background: rgba(198,73,50,0.8);}
-    header .gnb a {color: #fff;}
+    header .gnb a {color: #fff; font-size: 14px;}
     header .more {position: absolute; height: 30px; right: 20px; top: 10px; width: 50px;}
 
     .hero {height: 100vh;}
